@@ -29,4 +29,12 @@ docker run -it -d --link mq:mq --link dbstore:dbstore --name mq_reader mq_reader
 docker run -it -d --link mq:mq --name mq_publisher mq_publisher
 ```
 
+**Find IP of MQ server and access MQ management console**
+```
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' mq
+#default queue=hello is used
+http://<MQ_IP>:15672/#/queues
+```
+
+
 
