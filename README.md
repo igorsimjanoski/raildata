@@ -26,7 +26,7 @@ docker build -t mq -f docker_files/mq/Dockerfile docker_files/mq/
 **Run containers in following order: mongo, mq, mq_reader, mq_publisher**
 ```
 docker run --name dbstore -d mongo
-docker run -d --name mq rmq
+docker run -d --name mq mq
 docker run -it -d --link mq:mq --link dbstore:dbstore --name mq_reader mq_reader
 docker run -it -d --link mq:mq --name mq_publisher mq_publisher
 ```
