@@ -34,7 +34,7 @@ docker run -it -d --link mq:mq --name mq_publisher mq_publisher
 **Find IP of MQ server and access MQ management console**
 ```
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' mq
-#default queue=hello is used
+#default queue=hello is usedm use guest/guest to login
 http://<MQ_IP>:15672/#/queues
 ```
 
